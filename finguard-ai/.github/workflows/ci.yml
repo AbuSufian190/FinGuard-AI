@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ml-and-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ML deps
+        run: pip install -r ml/requirements.txt
+
+      - name: Train model (synthetic) for tests
+        run: |
+          cd ml
+          python -m src.train --rows 40000
+
+      - name: Run ML tests
+        run: |
+          cd ml
+          pip install pytest
+          pytest tests/ -q
+
+      - name: Install backend deps
+        run: pip install -r backend/requirements.txt
+
+      - name: Run backend tests
+        run: |
+          cd backend
+          pytest -q
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install
+        run: cd frontend && npm ci
+      - name: Type-check & build
+        run: cd frontend && npm run build
+      - name: Unit tests
+        run: cd frontend && npm run test

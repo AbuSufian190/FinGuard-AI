@@ -1,0 +1,13 @@
+{
+  "model_name": "random_forest",
+  "model_version": "v2026.11.19",
+  "trained_at": "2026-11-19T17:00:59.741836+00:00",
+  "selection_metric": "pr_auc",
+  "validation_score": 0.9099840108915906,
+  "decision_threshold": 0.9499562852146881,
+  "data_source": "SYNTHETIC development data (not real PaySim)",
+  "synthetic_data": true,
+  "n_train": 25600,
+  "n_test": 8000,
+  "note": "Metrics computed on SYNTHETIC development data; NOT real PaySim benchmark results."
+}

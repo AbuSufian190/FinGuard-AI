@@ -1,0 +1,46 @@
+{
+  "n_rows": 40000,
+  "n_fraud": 129,
+  "fraud_rate": 0.003225,
+  "n_duplicates": 0,
+  "missing_values": {},
+  "transaction_types": {
+    "CASH_IN": {
+      "count": 8916,
+      "fraud": 0,
+      "fraud_rate": 0.0
+    },
+    "CASH_OUT": {
+      "count": 13980,
+      "fraud": 101,
+      "fraud_rate": 0.007224606580829756
+    },
+    "DEBIT": {
+      "count": 432,
+      "fraud": 0,
+      "fraud_rate": 0.0
+    },
+    "PAYMENT": {
+      "count": 13522,
+      "fraud": 0,
+      "fraud_rate": 0.0
+    },
+    "TRANSFER": {
+      "count": 3150,
+      "fraud": 28,
+      "fraud_rate": 0.008888888888888889
+    }
+  },
+  "amount_stats": {
+    "mean": 8577.1907985,
+    "median": 3577.63,
+    "max": 1275398.91,
+    "fraud_mean": 28965.616201550387,
+    "legit_mean": 8511.225388126708
+  },
+  "class_balance": {
+    "legit": 39871,
+    "fraud": 129,
+    "imbalance_ratio": 309.07751937984494
+  }
+}

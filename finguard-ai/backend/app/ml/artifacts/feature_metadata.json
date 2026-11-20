@@ -1,0 +1,51 @@
+{
+  "model_features": [
+    "type",
+    "step",
+    "hour",
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "errorBalanceOrig",
+    "errorBalanceDest",
+    "amount_to_oldOrg",
+    "orig_emptied",
+    "dest_zero_before"
+  ],
+  "numeric_features": [
+    "step",
+    "hour",
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "errorBalanceOrig",
+    "errorBalanceDest",
+    "amount_to_oldOrg",
+    "orig_emptied",
+    "dest_zero_before"
+  ],
+  "categorical_features": [
+    "type"
+  ],
+  "raw_input_columns": [
+    "step",
+    "type",
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest"
+  ],
+  "transaction_types": [
+    "PAYMENT",
+    "TRANSFER",
+    "CASH_OUT",
+    "CASH_IN",
+    "DEBIT"
+  ],
+  "decision_threshold": 0.9499562852146881
+}
